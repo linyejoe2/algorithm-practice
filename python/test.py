@@ -1,3 +1,3 @@
 import utility
 
-print(utility.create_random_word_sequence())
+utility.test_cos()
