@@ -2,8 +2,8 @@ import utility
 
 
 def longest_common_subsequence_naive(s1: str, s2: str):
-    s1_subsequence = utility.combinations_for_all_level(s1)
-    s2_subsequence = utility.combinations_for_all_level(s2)
+    s1_subsequence = utility.combinations_for_all_length(s1)
+    s2_subsequence = utility.combinations_for_all_length(s2)
 
     res = []
     for sub1 in s1_subsequence:

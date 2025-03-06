@@ -65,7 +65,7 @@ def combinations(sequence: [], k: int) -> [[]]:
     return comb
 
 
-def combinations_for_all_level(sequence: []) -> [[]]:
+def combinations_for_all_length(sequence: []) -> [[]]:
     comb = []
     for i in range(len(sequence) + 1):
         comb.extend(combinations(sequence, i))
@@ -74,7 +74,7 @@ def combinations_for_all_level(sequence: []) -> [[]]:
 
 
 def test_cos():
-    print(combinations_for_all_level(range(3)))
+    print(combinations_for_all_length(range(3)))
 
 
 def print_matrix(mat: [[]]):
