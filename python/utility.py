@@ -2,6 +2,16 @@ import random
 import time
 
 
+def create_random_integer_sequence(amount=10, f=0, to=100):
+    res = []
+    for i in range(amount):
+        res.append(random.randint(f, to))
+    return res
+
+
+CRIS = create_random_integer_sequence
+
+
 def create_random_word_sequence(amount=10, upper_case=True, lower_case=True):
     upper_case_words = ["A", "B", "C", "D", "E",
                         "F", "G", "H", "I", "J",
@@ -83,9 +93,20 @@ def print_matrix(mat: [[]]):
 
 
 class Trace():
-    def __init__(self):
+    """
+    times: the times code excute.
+    i.e., this func will calc the running time and divide by times
+    """
+
+    def __init__(self, times: int):
         self.start_time = time.time()
+        self.times = times
 
     def stop(self, prefix="", suffix=""):
-        print(prefix, "use",
-              (time.time() - self.start_time), "seconds", suffix)
+        if self.times:
+            print(prefix, "use",
+                  ((time.time() - self.start_time) / self.times),
+                  "seconds in", self.times, "times", suffix)
+        else:
+            print(prefix, "use",
+                  (time.time() - self.start_time), "seconds", suffix)
